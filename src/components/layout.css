@@ -1,5 +1,5 @@
 :root {
-  --mainBrown: #2d1ef1;
+  --mainBrown: rgba(36, 172, 24, 0.933);
   --mainYellow: rgb(255, 158, 9);
   --mainGrey: #ece8dc;
   --mainWhite: #fff;
@@ -9,7 +9,7 @@
 body {
   background: var(--mainWhite);
   color: var(--mainDark);
-  font-family: Verdana, Verdana, Geneva, Tahoma, sans-seri !important;
+  font-family: Verdana, Verdana, Geneva, Tahoma, sans-serif !important;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -18,7 +18,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .text-yellow {
-  color:(--mainYellow);
+  color:var(--mainYellow);
 }
 
 .cart-icon {
@@ -27,7 +27,7 @@ h1,h2,h3,h4,h5,h6 {
   font-size: 2rem;
 }
 
-.default-background {
+.default-background, .about-background {
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -35,4 +35,22 @@ h1,h2,h3,h4,h5,h6 {
   background: linear-gradient(rgba(255, 158, 9, 0.5), rgba(255, 158, 9, 0.5));
   background-position: center;
   background-size: cover;
+}
+
+.btn-yellow {
+  color: var(--mainYellow);
+  border-color: var(--mainYellow);
+}
+
+.btn-yellow:hover {
+  color: var(--mainYellow);
+  background: var(--mainBrown);
+}
+
+.footer {
+  background: var(--mainDark);
+}
+
+.about-background {
+  min-height: 60vh;
 }
