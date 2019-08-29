@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Background from '../components/Globals/Background'
 import Info from '../components/Home/Info'
+import Menu from '../components/Home/Menu'
 
 //check react icon doc for different icon aggregators /fa is for fontawsome, there are others
 
@@ -19,6 +20,7 @@ const IndexPage = ({data}) => (
       title="regular joe's"
       styleClass="default-background" />
     <Info />
+    <Menu items={data.menu} />
   </Layout>
 ); 
 
@@ -28,6 +30,25 @@ export const query = graphql`
     childImageSharp{
       fluid{
         ...GatsbyImageSharpFluid_tracedSVG
+      }
+    }
+  }
+
+  menu: allContentfulCoffeeItem {
+    edges {
+      node {
+        id
+        title
+        description{
+          description
+        }
+        price
+        category
+        image{
+          fixed(width: 50, height:50){
+            ...GatsbyContentfulFixed_tracedSVG
+          }
+        }
       }
     }
   }
